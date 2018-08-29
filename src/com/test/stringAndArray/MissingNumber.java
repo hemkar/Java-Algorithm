@@ -1,3 +1,5 @@
+package com.test.stringAndArray;
+
 public class MissingNumber {
 
 	public static void main(String[] args) {

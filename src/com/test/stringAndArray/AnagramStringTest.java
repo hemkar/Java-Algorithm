@@ -1,3 +1,5 @@
+package com.test.stringAndArray;
+
 public class AnagramStringTest {
 
 	public static void main(String[] args) {
