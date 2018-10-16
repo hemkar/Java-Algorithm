@@ -4,7 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class PrintEvenAndOdd2 {
 	static AtomicInteger ai = new AtomicInteger(1);
-	//static volatile Integer ai=1;//We cant use Volatile as ++ operator need to be atomic so use AtomicInteger
+	// static volatile Integer ai=1;//We cant use Volatile as ++ operator need
+	// to be atomic so use AtomicInteger
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -31,10 +32,10 @@ class Even2 extends Thread {
 	public void run() {
 		while (i.get() < 10) {
 			synchronized (object) {
-				System.out.println("Even thread line 34 inside synchronized block");
+				System.out.println("Even thread line 35 inside synchronized block");
 				while (i.get() % 2 != 0) {
 					try {
-						System.out.println("Even thread line 37 going to wait because no is odd "+i);
+						System.out.println("Even thread line 38 going to wait because no is odd " + i);
 						object.wait();
 						System.out.println(Thread.currentThread().getName() + " GOT NOTIFICATION");
 					} catch (InterruptedException e) {
@@ -61,9 +62,9 @@ class Odd2 extends Thread {
 	public void run() {
 		while (i.get() < 10) {
 			synchronized (object) {
-				System.out.println("Odd thread line 63 inside synchronized block");
+				System.out.println("Odd thread line 65 inside synchronized block");
 				while (i.get() % 2 == 0) {
-					System.out.println("Odd thread line 65 going to wait becaue no is even " +i);
+					System.out.println("Odd thread line 67 going to wait becaue no is even " + i);
 					try {
 						object.wait();
 						System.out.println(Thread.currentThread().getName() + " GOT NOTIFICATION");
@@ -71,7 +72,7 @@ class Odd2 extends Thread {
 						e.printStackTrace();
 					}
 				}
-				System.out.println("Odd thread line 73");
+				System.out.println("Odd thread line 75");
 				System.out.println(Thread.currentThread().getName() + " printed :" + i.getAndIncrement());
 				object.notifyAll();
 			}
