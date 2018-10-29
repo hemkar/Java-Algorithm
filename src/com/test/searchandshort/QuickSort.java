@@ -4,6 +4,7 @@ package com.test.sorting;
 import java.util.Arrays;
 // quicksort is divive and conquer algo.
 // it is not stable sorting algo.
+//O(nlog(n)) in best and average case.
 public class QuickSort {
 
 	public static void quickSort(int arr[], int start, int end) {
