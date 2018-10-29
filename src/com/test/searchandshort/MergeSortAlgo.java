@@ -5,13 +5,13 @@ import java.util.Arrays;
 public class MergeSortAlgo {
 
 	public static void mergeSort(int arr[]) {
-		//IT IS CONSIDERD THAT ARRAY OF ONLY ELEMENT IS ALREADY SORTED.
+		//ARRAY OF ONLY ELEMENT IS ALREADY CONSIDERED SORTED.
 		if (arr.length < 2) //base case:Exit recursion if array has only one element.
 			return;
 		//Divide and conquer
 		int mid = arr.length / 2; //dive array into half
 		int left[] = new int[mid]; //create an auxilary array to store left half
-		int right[] = new int[(arr.length) - mid];//create an array to store left half
+		int right[] = new int[(arr.length) - mid];//create an auxilary array to store right half
 		for (int i = 0; i < left.length; i++) { //populate elements in left array
 			left[i] = arr[i];
 		}
