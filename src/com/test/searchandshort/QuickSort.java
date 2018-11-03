@@ -10,7 +10,8 @@ public class QuickSort {
 	public static void quickSort(int arr[], int start, int end) {
 
 		if (start < end) { //do this only if start index is less than end
-			int partitionIndex = partition(arr, start, end); //call partition function to get partition so that all element less than partition are to the left
+			int partitionIndex = partition(arr, start, end); //call partition function to get partition so that
+									//all element less than partition are to the left	
 									// and larger are at the right.
 			quickSort(arr, start, partitionIndex - 1);// call quickSort on  left partition
 			quickSort(arr, partitionIndex + 1, end); // call quickSort on right partition
