@@ -18,9 +18,9 @@ public class FindOcuuranceOfNumber {
 			}else if(arr[mid] == numberToSearch && findMin==true){ // find minimum index 
 				result = mid;
 				high=mid-1;
-			} else if (arr[mid] > numberToSearch) { // find no in lefy half
+			} else if (arr[mid] > numberToSearch) { // find no. in left half
 				high = mid - 1;
-			} else { 				// find no in right half
+			} else { 				// find no. in right half
 				low = mid + 1;
 			}
 		}
