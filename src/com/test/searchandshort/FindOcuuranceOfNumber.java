@@ -12,15 +12,15 @@ public class FindOcuuranceOfNumber {
 
 		while (low <= high) {
 			mid = low + (high - low) / 2;
-			if (arr[mid] == numberToSearch && findMin==false) {
+			if (arr[mid] == numberToSearch && findMin==false) { // find max index
 				result= mid;
 				low=mid+1;
-			}else if(arr[mid] == numberToSearch && findMin==true){
+			}else if(arr[mid] == numberToSearch && findMin==true){ // find minimum index 
 				result = mid;
 				high=mid-1;
-			} else if (arr[mid] > numberToSearch) {
+			} else if (arr[mid] > numberToSearch) { // find no. in left half
 				high = mid - 1;
-			} else {
+			} else { 				// find no. in right half
 				low = mid + 1;
 			}
 		}
@@ -32,11 +32,11 @@ public class FindOcuuranceOfNumber {
 
 		int arr[] = { 1, 3, 3, 3,6, 9, 10, 50, 50, 67, 100 };
 		FindOcuuranceOfNumber bs = new FindOcuuranceOfNumber();
-		int i = bs.BinarySearcOcc(arr, 100,true);
+		int i = bs.BinarySearcOcc(arr, 100,true); //to min index
 		if (i == -1) {
 			System.out.println("number not found");
 		} else {
-			int j = bs.BinarySearcOcc(arr, 100,false);
+			int j = bs.BinarySearcOcc(arr, 100,false); // to find max index
 			System.out.println("Number of occurance of number "+ (j-i+1));
 		}
 	}
